@@ -117,7 +117,6 @@ voucher_tweak_references(mach_port_t release_voucher, mach_port_t reference_vouc
 	kern_return_t kr = task_swap_mach_voucher(mach_task_self(), release_voucher, &inout_voucher);
 	if (kr != KERN_SUCCESS) {
 		ERROR("%s returned %d: %s", "task_swap_mach_voucher", kr, mach_error_string(kr));
-        
 	}
 	// At this point we've successfully tweaked the voucher reference counts, but our port
 	// reference counts might be messed up because of the voucher port returned in
